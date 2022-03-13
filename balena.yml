@@ -1,0 +1,27 @@
+name: Tiny Hostname
+description: >-
+  Set the hostname on Balena devices. This is a fork of the official Balena package but refactored to be smaller.
+joinable: false
+version: 0.0.1
+type: sw.block
+assets:
+  repository:
+    type: blob.asset
+    data:
+      url: "https://github.com/maggie0002/balena-tiny-hostname"
+  logo:
+    type: blob.asset
+    data:
+      url: "https://raw.githubusercontent.com/maggie0002/balena-device-ui/main/logo.png"
+data:
+  defaultDeviceType: raspberrypi4-64
+  supportedDeviceTypes:
+    - raspberry-pi
+    - raspberry-pi2
+    - raspberrypi3
+    - raspberrypi3-64
+    - raspberrypi4-64
+    - fincm3
+    - raspberrypi400-64
+    - intel-nuc
+    - genericx86-64-ext
