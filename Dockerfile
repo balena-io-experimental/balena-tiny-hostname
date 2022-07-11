@@ -8,7 +8,7 @@ RUN dockerize -n -o /app/ -a $(which jq) $(which jq) $(which sh) $(which sh)
 
 FROM scratch
 
-COPY --from=tiny-curl /build .
+COPY --from=tiny-curl / .
 
 COPY --from=dockerize /app .
 
