@@ -13,7 +13,7 @@ version: "2"
 
 services:
   hostname:
-    image: ghcr.io/maggie0002/py-wifi-connect
+    image: ghcr.io/maggie0002/balena-tiny-hostname
     restart: no # Required to avoid container restarting indefinitely
     labels:
       io.balena.features.supervisor-api: 1 # Required to interact with the supervisor
