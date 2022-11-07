@@ -60,3 +60,24 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+  deploy-to-bcr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update balena.yml
+        uses: balena-io-experimental/balena.yml-action@main
+        with:
+          sync_readme: true
+          sync_tag: true
+
+      - name: Deploy to Balena
+        uses: balena-io/deploy-to-balena-action@master
+        with:
+          balena_token: ${{ secrets.BALENA_TOKEN }}
+          fleet: maggie0002/tiny-hostname
+
+      - name: Log release ID built
+        run: echo "Built release ID ${{ steps.build.outputs.release_id }}"
+        
